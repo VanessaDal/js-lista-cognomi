@@ -9,35 +9,35 @@ var arr=["Bianchi","Rossi", "Duzioni", "Balsano", "Verdi"];
 
 
 // chiediamo il cognome
+var cognome=document.getElementById("cognome");
 
-var cognome = prompt("Qual è il tuo cognome?");
+bottone.addEventListener("click", 
+function(){
 
 // aggiungi il cognome alla lista
-arr.push(cognome)
+arr.push(cognome.value);
 
-//faccio una copia disordinata dell'array
+//faccio una copia dell'array prima di ordinare l'originale
 var arrCopy=[];
 
 for (i = 0; i < arr.length; i++) {
     arrCopy.push(arr[i]);
   }
 
-  console.log(arrCopy)
-
 // stampa la lista ordinata alfabeticamente
 arr.sort();
 var a=0;
-console.log(arr)
 while (a<arr.length){
 document.getElementById("lista-ordinata").insertAdjacentHTML("beforeend","<li>" + arr[a] + "</li>" );
-a++}
+a++};
 // stampiamo in che posizione si trova l'utente
 
-document.getElementById("posizione").innerHTML= "Gentile " + cognome + ", il tuo cognome si trova alla posizione numero " + (arr.indexOf(cognome)+1);
+document.getElementById("posizione").innerHTML= "Gentile " + cognome.value + ", il tuo cognome si trova alla posizione numero " + (arr.indexOf(cognome.value)+1);
 
 //stampa lista disordinata alfabeticamente
 
-var b=0
+var b=0;
 while (b<arrCopy.length){
     document.getElementById("lista-disordinata").insertAdjacentHTML("beforeend","<li>" + arrCopy[b] + "</li>" );
     b++};
+});
