@@ -5,19 +5,19 @@
 
 // creiamo l'array
 
-var arr=["Bianchi", "Rossi", "Duzioni", "Balsano", "Verdi"]
+var arr=["Bianchi","Rossi", "Duzioni", "Balsano", "Verdi"];
 
 // chiediamo il cognome
 
-var cognome = prompt("Qual è il tuo cognome?")
+var cognome = prompt("Qual è il tuo cognome?");
 
 // aggiungi il cognome alla lista
 arr.push(cognome)
-console.log(arr)
+
 
 // stampa la lista ordinata alfabeticamente
 arr.sort()
-console.log(arr)
+document.getElementById("lista-ordinata").innerHTML="Questa è la lista ordinata alfabeticamente: "+arr;
 // stampiamo in che posizione si trova l'utente
 
-console.log (arr.indexOf(cognome)+1)
+document.getElementById("posizione").innerHTML= "Gentile " + cognome + ", il tuo cognome si trova alla posizione numero " + (arr.indexOf(cognome)+1);
